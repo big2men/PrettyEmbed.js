@@ -200,13 +200,6 @@
 				$newDOMElement.html( $(this).html() );
 				$(this).remove();
 			}
-
-			// if mobile, go straight to iframe
-			if (mobile) {
-				$(window).on('load', function() {
-					$('.pretty-embed').trigger('click');
-				});
-			}
 		});
 
 
@@ -218,7 +211,12 @@
 			clickEventRunner( $(this) );
 		});
 
-
+		// if mobile, go straight to iframe
+		if (mobile) {
+			$(window).on('load', function() {
+				$('.pretty-embed').trigger('click');
+			});
+		}
 
 		/**
 		 * Function: clickEventRunner(obj)
